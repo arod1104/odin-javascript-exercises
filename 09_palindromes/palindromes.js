@@ -2,7 +2,9 @@ const palindromes = function (string) {
   const arr = string.split("");
   const regex = /[a-zA-Z0-9]/;
   const filteredChars = arr.filter((char) => regex.test(char));
-  const cleanArr = filteredChars.map((char) => char.toLowerCase());
+  const cleanArr = arr
+    .filter((char) => regex.test(char))
+    .map((char) => char.toLowerCase());
   return cleanArr.join("") === cleanArr.reverse().join("");
 };
 
